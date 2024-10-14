@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikacja do notatek</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="max-width">Notes</h1>
+           <div class="search-wrapper max-width">
+                <input type="text" id="search" class="search input-style" placeholder="Search notes...">
+                <button class="btn-style" id="add-new-note">Add New</button>
+           </div>
+            <div class="note-editor-wrapper max-width">
+                <div class="note-editor max-width" id="note-editor" style="display: none;">
+                    <div class="note-editor-header">
+                        <p>Add new note</p>
+                        <button class="btn-cancel">Cancel</button>
+                    </div>
+                    <input class="input-style" type="text" id="note-title" placeholder="Note title">
+                    <textarea rows="8" class="input-style" id="note-content" placeholder="Your note"></textarea>
+                    <div class="note-editor-footer">
+                        <button class="btn-style" id="save-note">Save</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="max-width">
+            <div class="notes-list" id="notes-list"></div>
+            <div class="no-notes">
+                <img class="info-icon" height="21" width="22" src="./assets/info_icon.svg" alt="info icon">
+                <p>No notes yet</p>
+                <span>Add a note to keep track of your learnings.</span>
+                <div>
+                    <button class="add-button-style" id="add-first-note"><img height="20" src="./assets/first_note.svg" alt="Add note icon"><span></span>Add
+                        Note</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <div id="delete-modal" class="modal">
+        <div class="modal-content">
+            <h2>Delete Note</h2>
+            <p>Are you sure you want to delete this note?</p>
+            <div class="modal-buttons">
+                <button id="cancel-delete" class="btn-secondary">Cancel</button>
+                <button id="confirm-delete" class="btn-primary">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
